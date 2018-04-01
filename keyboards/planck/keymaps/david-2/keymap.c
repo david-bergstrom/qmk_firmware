@@ -16,13 +16,11 @@
 
 #include "planck.h"
 #include "action_layer.h"
-#include "quantum.h"
 #include "keymap_colemak.h"
 
 extern keymap_config_t keymap_config;
 
-
-#define ARROW MO(_ARROW)
+#define ARROW MO(_NAV)
 
 enum planck_layers {
   _QWERTY,
@@ -30,7 +28,7 @@ enum planck_layers {
   _LOWER,
   _RAISE,
   _ADJUST,
-  _ARROW
+  _NAV
 };
 
 enum planck_keycodes {
@@ -38,7 +36,6 @@ enum planck_keycodes {
   QWERTY,
   LOWER,
   RAISE,
-  BACKLIT,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -146,11 +143,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |      |      |      |      |      |             |      |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
-[_ARROW] = {
-  {_______, _______, _______, _______, _______, _______, KC_DOWN, KC_RIGHT, _______, _______, _______, _______},
-  {_______, _______, _______, _______, _______, _______, KC_LEFT, _______,  _______, _______, _______, _______},
-  {_______, _______, _______, _______, _______, _______, KC_UP,   _______,  _______, _______, _______, _______},
-  {_______, _______, _______, _______, _______, _______, _______, _______,  _______, _______, _______, _______}
+[_NAV] = {
+  {_______, LGUI(KC_1), LGUI(KC_2), LGUI(KC_3), _______, _______, KC_DOWN, KC_RIGHT, _______, _______, _______, _______},
+  {_______, LGUI(KC_4), LGUI(KC_5), LGUI(KC_6), _______, _______, KC_LEFT, _______,  _______, _______, _______, _______},
+  {_______, LGUI(KC_7), LGUI(KC_8), LGUI(KC_9), _______, _______, KC_UP,   _______,  _______, _______, _______, _______},
+  {_______, _______,    _______,    _______,    _______, _______, _______, _______,  _______, _______, _______, _______}
 }
 
 
